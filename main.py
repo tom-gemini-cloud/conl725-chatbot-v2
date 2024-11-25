@@ -18,17 +18,17 @@ except AttributeError:
 else:
     ssl._create_default_https_context = _create_unverified_https_context
 
-# Download required NLTK data
+# Download NLTK data for tokenization, stopwords and lemmatisation
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-# Initialize FastAPI app and templates
+# Initialise the FastAPI app and templates
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
-# Load training data once
+# Load training data
 try:
     with open('data/training_data.json', 'r') as f:
         training_data = json.load(f)

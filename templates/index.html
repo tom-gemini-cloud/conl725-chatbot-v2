@@ -6,7 +6,11 @@
     <p class="subtitle">Ask me anything and I will do my best to answer</p>
   </header>
 
-  <main class="chat-box" id="chat-box">
+  <main
+    class="chat-box"
+    id="chat-box"
+    hx-on::after-swap="this.scrollTop = this.scrollHeight"
+  >
     <div class="message bot-message">
       <div class="message-content">Hello! How can I help you today?</div>
     </div>
@@ -18,7 +22,8 @@
       hx-target="#chat-box"
       hx-swap="beforeend"
       hx-indicator="#spinner"
-      _="on submit target.reset()"
+      _="on htmx:afterRequest reset() me"
+      id="chat-form"
     >
       <div class="input-group">
         <input
@@ -27,6 +32,8 @@
           class="message-input"
           placeholder="Type your message..."
           required
+          id="message-input"
+          _="on keyup[key=='Enter'] reset() closest <form/>"
         />
         <button type="submit" class="send-button">
           Send
