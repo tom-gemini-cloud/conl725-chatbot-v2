@@ -1,0 +1,19 @@
+# Virtual environment
+.botvenv/
+__pycache__/
+
+# Python bytecode
+*.pyc
+*.pyo
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# Templates cache
+templates/__pycache__/

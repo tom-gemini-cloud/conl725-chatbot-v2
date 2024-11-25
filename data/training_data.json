@@ -1,0 +1,170 @@
+{
+  "greeting": {
+    "keywords": [
+      "hello",
+      "hi",
+      "hey",
+      "morning",
+      "afternoon",
+      "evening",
+      "yo",
+      "howdy",
+      "hiya",
+      "greetings"
+    ],
+    "responses": [
+      "Hello! How can I help you today?",
+      "Hi there! What can I assist you with?",
+      "Hey! What's on your mind?",
+      "Greetings! How may I assist you?"
+    ]
+  },
+  "farewell": {
+    "keywords": [
+      "bye",
+      "goodbye",
+      "see you",
+      "later",
+      "take care",
+      "good night",
+      "cya",
+      "farewell"
+    ],
+    "responses": [
+      "Goodbye! Have a great day!",
+      "See you later! Take care!",
+      "Bye! Feel free to come back if you need anything!",
+      "Take care! Have a wonderful day!"
+    ]
+  },
+  "thanks": {
+    "keywords": ["thank", "thanks", "appreciate", "grateful", "thx", "tysm"],
+    "responses": [
+      "You're welcome! Let me know if you need anything else!",
+      "Happy to help! Is there anything else you'd like to know?",
+      "My pleasure! Don't hesitate to ask if you need more assistance!"
+    ]
+  },
+  "help": {
+    "keywords": [
+      "help",
+      "support",
+      "assist",
+      "guidance",
+      "stuck",
+      "confused",
+      "lost"
+    ],
+    "responses": [
+      "I'm here to help! What do you need assistance with?",
+      "How can I assist you today?",
+      "I'd be happy to help. What's giving you trouble?"
+    ]
+  },
+  "about": {
+    "keywords": [
+      "who are you",
+      "what are you",
+      "about you",
+      "tell me about",
+      "your purpose"
+    ],
+    "responses": [
+      "I'm a chatbot designed to help answer questions and provide assistance.",
+      "I'm an AI assistant here to help you with your questions and concerns.",
+      "I'm your friendly AI helper, ready to assist with any questions you might have!"
+    ]
+  },
+  "capabilities": {
+    "keywords": [
+      "can you",
+      "able to",
+      "capable",
+      "what do you do",
+      "features",
+      "abilities"
+    ],
+    "responses": [
+      "I can help with general questions, provide information, and assist with basic tasks. What would you like to know?",
+      "I'm capable of answering questions and helping you find information. What can I help you with?",
+      "I can assist with various queries and provide helpful information. What are you looking for?"
+    ]
+  },
+  "weather": {
+    "keywords": [
+      "weather",
+      "temperature",
+      "forecast",
+      "rain",
+      "sunny",
+      "cold",
+      "hot"
+    ],
+    "responses": [
+      "I'm not able to check real-time weather, but I can help you find a reliable weather service!",
+      "While I can't provide current weather information, I can suggest some good weather apps and websites."
+    ]
+  },
+  "time": {
+    "keywords": ["time", "what time", "current time", "clock", "hour"],
+    "responses": [
+      "I don't have access to real-time information, but you can check your device's clock for the current time.",
+      "You can find the current time by looking at your device's time display."
+    ]
+  },
+  "positive": {
+    "keywords": [
+      "good",
+      "great",
+      "awesome",
+      "excellent",
+      "amazing",
+      "wonderful",
+      "fantastic",
+      "perfect"
+    ],
+    "responses": [
+      "I'm glad to hear that! Is there anything else you'd like to discuss?",
+      "That's great! Let me know if you need anything else!",
+      "Wonderful! How else can I help?"
+    ]
+  },
+  "negative": {
+    "keywords": [
+      "bad",
+      "terrible",
+      "awful",
+      "horrible",
+      "poor",
+      "wrong",
+      "not good"
+    ],
+    "responses": [
+      "I'm sorry to hear that. How can I help improve the situation?",
+      "That's unfortunate. Is there something specific I can help with?",
+      "I apologize for any issues. Let me know how I can help make things better."
+    ]
+  },
+  "unclear": {
+    "keywords": [
+      "dont understand",
+      "what do you mean",
+      "unclear",
+      "confused",
+      "explain"
+    ],
+    "responses": [
+      "I'll try to explain more clearly. Which part would you like me to clarify?",
+      "Let me help clarify that for you. What specifically is unclear?",
+      "I can explain that in a different way. What part needs clarification?"
+    ]
+  },
+  "default": {
+    "keywords": [],
+    "responses": [
+      "I'm not sure I understand. Could you please rephrase that?",
+      "I didn't quite catch that. Could you try asking in a different way?",
+      "I'm still learning! Could you express that differently?"
+    ]
+  }
+}

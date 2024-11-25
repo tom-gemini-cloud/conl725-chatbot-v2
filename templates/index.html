@@ -1,0 +1,55 @@
+<!-- templates/index.html -->
+{% extends "base.html" %} {% block content %}
+<div class="chat-container">
+  <header class="chat-header">
+    <h1>Super NLTK Chatbot</h1>
+    <p class="subtitle">Ask me anything and I will do my best to answer</p>
+  </header>
+
+  <main class="chat-box" id="chat-box">
+    <div class="message bot-message">
+      <div class="message-content">Hello! How can I help you today?</div>
+    </div>
+  </main>
+
+  <footer class="chat-footer">
+    <form
+      hx-post="/chat"
+      hx-target="#chat-box"
+      hx-swap="beforeend"
+      hx-indicator="#spinner"
+      _="on submit target.reset()"
+    >
+      <div class="input-group">
+        <input
+          type="text"
+          name="message"
+          class="message-input"
+          placeholder="Type your message..."
+          required
+        />
+        <button type="submit" class="send-button">
+          Send
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+    </form>
+    <div id="spinner" class="htmx-indicator">
+      <div class="loading-spinner"></div>
+    </div>
+  </footer>
+</div>
+{% endblock %}

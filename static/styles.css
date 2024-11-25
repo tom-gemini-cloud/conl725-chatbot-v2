@@ -1,0 +1,220 @@
+/* static/styles.css */
+:root {
+  --primary-color: #74c563;
+  --primary-dark: #37a837;
+  --secondary-color: #374151;
+  --bg-color: #f0fdf4;
+  --user-message-bg: #d1fae5;
+  --bot-message-bg: #ecfdf5;
+  --border-color: #d1d5db;
+  --shadow-color: rgba(16, 185, 129, 0.1);
+}
+
+.chat-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px -2px var(--shadow-color),
+    0 0 80px -10px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.chat-header {
+  padding: 1.5rem;
+  background: var(--primary-color);
+  border-radius: 16px 16px 0 0;
+  position: relative;
+}
+
+.chat-header h1 {
+  margin: 0;
+  color: white;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  margin: 0.5rem 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  background: var(--bg-color);
+  scroll-behavior: smooth;
+}
+
+.chat-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+  opacity: 0.5;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: messageSlide 0.5s ease forwards;
+}
+
+.user-message {
+  flex-direction: row-reverse;
+  margin-left: 20%;
+}
+
+.bot-message {
+  margin-right: 20%;
+}
+
+.message-content {
+  padding: 1rem 1.25rem;
+  border-radius: 18px;
+  max-width: 100%;
+  word-wrap: break-word;
+  position: relative;
+  transform-origin: left bottom;
+}
+
+.user-message .message-content {
+  background: var(--primary-color);
+  color: white;
+  border-bottom-right-radius: 4px;
+  transform-origin: right bottom;
+  box-shadow: 0 4px 15px -3px rgba(16, 185, 129, 0.2);
+}
+
+.bot-message .message-content {
+  background: var(--bot-message-bg);
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.chat-footer {
+  padding: 1.25rem;
+  border-top: 2px solid var(--bg-color);
+  background: white;
+  border-radius: 0 0 16px 16px;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  background: var(--bg-color);
+  border-radius: 12px;
+}
+
+.message-input {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.message-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.send-button {
+  padding: 0.875rem 1.75rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.send-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.send-button:active {
+  transform: translateY(0);
+}
+
+.htmx-indicator {
+  display: none;
+}
+
+.htmx-request .htmx-indicator {
+  display: inline-block;
+}
+
+.loading-spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes messageSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Add a pulse animation to new messages */
+.message:last-child .message-content {
+  animation: pulse 1s ease;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Enhance the scrollbar hover state */
+.chat-box::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
