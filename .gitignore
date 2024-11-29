@@ -18,11 +18,17 @@ __pycache__/
 # Templates cache
 templates/__pycache__/
 
-# PyTorch model
-dialog_model.pt
+# PyTorch models
+*.pt
 
 # Data folder
 data/
 
-# Processed data
+# Processed data folder
 processed_data/
+
+# Model folder
+dialogue_model_final/
+
+# Dialogue model folder
+dialogue_model/

@@ -122,13 +122,21 @@ class NLTKDialogPreprocessor:
         """Save processed conversations and vocabulary"""
         os.makedirs(output_path, exist_ok=True)
         
-        # Save conversations
+        # Save conversations in both pickle and JSON formats
         with open(os.path.join(output_path, 'processed_conversations.pkl'), 'wb') as f:
             pickle.dump(self.conversations, f)
         
-        # Save vocabulary
+        with open(os.path.join(output_path, 'processed_conversations.json'), 'w') as f:
+            json.dump(self.conversations, f, indent=2)
+        
+        # Save vocabulary in both pickle and JSON formats
         with open(os.path.join(output_path, 'vocabulary.pkl'), 'wb') as f:
             pickle.dump(self.vocabulary, f)
+        
+        # Convert FreqDist to dictionary for JSON serialization
+        vocab_dict = dict(self.vocabulary)
+        with open(os.path.join(output_path, 'vocabulary.json'), 'w') as f:
+            json.dump(vocab_dict, f, indent=2)
         
         print(f"Saved processed data to {output_path}")
 
